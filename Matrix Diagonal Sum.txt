@@ -1,0 +1,22 @@
+/*
+Given a square matrix mat, return the sum of the matrix diagonals.
+
+Only include the sum of all the elements on the primary diagonal and all the elements on the secondary diagonal that are not part of the primary diagonal.
+*/
+
+int matrixdiag(int arr[][100],int m,int n){
+	int i=0,j=0,sum=0,div;
+	while(i<m&&j<n){
+		sum+=arr[i][j];
+	}
+	
+	j=n-1;
+	for(i=0;i<m;i++){
+		if(i!=j){
+			sum+=arr[i][j];
+			j--;
+		}
+	}
+	
+	return sum;
+}
